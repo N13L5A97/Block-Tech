@@ -4,17 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "run server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/N13L5A97/Block-Tech.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tech"
+  ],
+  "author": "Niels",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/N13L5A97/Block-Tech/issues"
   },
-  "homepage": "https://github.com/N13L5A97/Block-Tech#readme"
+  "homepage": "https://github.com/N13L5A97/Block-Tech#readme",
+  "dependencies": {
+    "camel-case": "^4.1.2",
+    "express": "^4.18.2",
+    "node-semver": "^1.0.0",
+    "semver": "^7.3.8"
+  }
 }
