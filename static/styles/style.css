@@ -1,0 +1,29 @@
+:root{
+    --background-color: white;
+    --color-text: black;
+}
+
+body{
+    height: 100dvh;
+    width: 100dvw;
+    background-image: url(../images/sci-fi.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section{
+    background-color: var(--background-color);
+    width: 50dvw; 
+    margin: auto;
+    padding: 2em;
+    border-radius: 2em;
+}
+
+form{
+    margin-bottom: 1em;
+}
+
+#envoirement{
+    display: none;
+}
+
