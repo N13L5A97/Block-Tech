@@ -8,37 +8,50 @@
 
 :root{
     --background-color: white;
-    --color-text: black;
+    --color-text: white;
     --nav-color: #595cff;
-    --link-color: white;
     --font: league_spartanbold, sans-serif;
 }
 
 body{
     margin: 0;
-    height: 100dvh;
-    width: 100dvw;
     background-color: var(--background-color);
     list-style: none;
+    font-family: var(--font);
+    color: var(--color-text);
+    position: relative;
+}
+h2{
+    margin: 0;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
 }
 
 a{
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--text-color);
 }
 
 ul{
     list-style: none;
 }
 
-nav{
-    width: 100dvw;
+header{
+    position: fixed;
+    width: 100%;
+    position: relative;
     background-color: var(--nav-color);
-    height: 3em;
+    height: 6em;
+}
+
+nav{
     display: flex;
     align-items: center;
     padding: 1em;
-    font-family: var(--font);
     gap: 3em;
 }
 
@@ -60,19 +73,63 @@ main{
 }
 
 section{
-    background-color: var(--background-color);
-    width: 50dvw; 
+    background-color: var(--nav-color);
     margin: auto;
+    width: 50%;
     padding: 2em;
     border-radius: 2em;
 }
 
-form{
-    margin-bottom: 1em;
-}
+.slider {
+    appearance: none;
+    width: 80%; /* width */
+    height: 1em; /* Specified height */
+    background: var(--background-color); /* white background */
+    outline: none; /* Remove outline */
+    transition: opacity .2s;
+    margin: 1em 0;
+    border-radius: 5em;
+  }
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #000000; /* black background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;
+  }
+
+/* all maps */
 
 img{
-    width: 30%;
+    width: 80%;
     aspect-ratio: 1/1;
 }
 
+.all{
+    background-color: white;
+    color: black;
+}
+
+.all ul{
+    gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    height: 10em;
+}
+
+.all li{
+    gap: 2px;
+    padding: 1em;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--nav-color);
+    height: 8em;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+}

@@ -3,7 +3,7 @@
 <head>
   <%- include('../partials/head'); %>
 </head>
-<body class="container">
+<body>
 
 <header>
   <%- include('../partials/header'); %>
@@ -15,7 +15,7 @@
     
             <form id="time">
                 <label for="year">Year:</label><br>
-                <input type="range" min="-100" max="3500" value="-100"><br>
+                <input type="range" min="-100" max="3500" value="-100" class="slider" oninput="this.nextElementSibling.value = this.value"> <output>0</output><br>
 
                 <label for="season">Season:</label><br>
                 <input type="checkbox" name="Winter" value="Winter">
@@ -27,19 +27,19 @@
                 <input type="checkbox" name="Summer" value="Summer">
                 <label for="Summer"> Summer</label><br>
 
-                <input type="checkbox" name="Fall"   value="Fall">
+                <input type="checkbox" name="Fall" value="Fall">
                 <label for="Fall"> Fall</label><br>
             </form>
 
             <form id="envoirement">
                 <label for="buildings">Buildings:</label><br>
-                <input type="range" min="0" max="100" value="0"><br>
+                <input type="range" min="0" max="100" value="0" class="slider" oninput="this.nextElementSibling.value = this.value"> <output>0</output> <br>
 
                 <label for="height">Build Height:</label><br>
-                <input type="range" min="0" max="100" value="0"><br>
+                <input type="range" min="0" max="100" value="0" class="slider" oninput="this.nextElementSibling.value = this.value"> <output>0</output><br>
 
                 <label for="Water">Water:</label><br>
-                <input type="range" min="0" max="100" value="0"><br>
+                <input type="range" min="0" max="100" value="0" class="slider" oninput="this.nextElementSibling.value = this.value"> <output>0</output><br>
 
                 <input type="checkbox" name="animals" value="animals">
                 <label for="animals"> Animals</label><br>
@@ -48,6 +48,7 @@
                 <label for="people"> People</label><br>
             </form>
 
+            
             <button>Previous</button>
             <button>Random</button>
             <button>Next</button>

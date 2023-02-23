@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 8080
-app.use(express.static('static'))
 
 // set the view engine to ejs
 app.set('view engine', 'ejs')
+app.set('views', 'views')
+app.use(express.static('static'))
 
 // use res.render to load up an ejs view file
 
@@ -17,9 +18,9 @@ app.get('/', function (req, res) {
 app.get('/all', function (req, res) {
   res.render('pages/all')
   let games = [
-    { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
+    { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'Sci-fi', img: '/images/sci-fi.jpeg' }
   ]
-  var tagline = 'The Amazing Spiderman'
+  var tagline = 'Choose from all maps here'
 
   res.render('pages/all', {
     games: games,
