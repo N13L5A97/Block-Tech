@@ -1,14 +1,62 @@
+@font-face {
+        font-family: 'league_spartanbold';
+        src: url('./fonts/leaguespartan-bold-webfont.woff2') format('woff2'),
+             url('./fonts/leaguespartan-bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+
 :root{
     --background-color: white;
     --color-text: black;
+    --nav-color: #595cff;
+    --link-color: white;
+    --font: league_spartanbold, sans-serif;
 }
 
 body{
+    margin: 0;
     height: 100dvh;
     width: 100dvw;
-    background-image: url(../images/sci-fi.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--background-color);
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+ul{
+    list-style: none;
+}
+
+nav{
+    width: 100dvw;
+    background-color: var(--nav-color);
+    height: 3em;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    font-family: var(--font);
+    gap: 3em;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+nav ul li a:hover{
+    font-weight: 700;
+}
+
+main{
+    padding: 2em;
 }
 
 section{
@@ -23,7 +71,8 @@ form{
     margin-bottom: 1em;
 }
 
-#envoirement{
-    display: none;
+img{
+    width: 30%;
+    aspect-ratio: 1/1;
 }
 

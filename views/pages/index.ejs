@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <section>
+        <h2>Your World</h2>
+    
+            <form id="time">
+                <label for="year">Year:</label><br>
+                <input type="range" min="-100" max="3500" value="-100"><br>
+
+                <label for="season">Season:</label><br>
+                <input type="checkbox" name="Winter" value="Winter">
+                <label for="Winter"> Winter</label><br>
+
+                <input type="checkbox" name="Spring" value="Spring">
+                <label for="Spring"> Spring</label><br>
+
+                <input type="checkbox" name="Summer" value="Summer">
+                <label for="Summer"> Summer</label><br>
+
+                <input type="checkbox" name="Fall"   value="Fall">
+                <label for="Fall"> Fall</label><br>
+            </form>
+
+            <form id="envoirement">
+                <label for="buildings">Buildings:</label><br>
+                <input type="range" min="0" max="100" value="0"><br>
+
+                <label for="height">Build Height:</label><br>
+                <input type="range" min="0" max="100" value="0"><br>
+
+                <label for="Water">Water:</label><br>
+                <input type="range" min="0" max="100" value="0"><br>
+
+                <input type="checkbox" name="animals" value="animals">
+                <label for="animals"> Animals</label><br>
+
+                <input type="checkbox" name="people" value="people">
+                <label for="people"> People</label><br>
+            </form>
+
+            <button>Previous</button>
+            <button>Random</button>
+            <button>Next</button>
+    </section>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
