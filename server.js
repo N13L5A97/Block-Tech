@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 8080
-app.use(express.static('static'))
 
 // set the view engine to ejs
 app.set('view engine', 'ejs')
+app.set('views', 'views')
+app.use(express.static('static'))
 
 // use res.render to load up an ejs view file
 

@@ -20,6 +20,12 @@ body{
     width: 100dvw;
     background-color: var(--background-color);
     list-style: none;
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
 }
 
 a{
@@ -32,6 +38,7 @@ ul{
 }
 
 nav{
+    position: fixed;
     width: 100dvw;
     background-color: var(--nav-color);
     height: 3em;
