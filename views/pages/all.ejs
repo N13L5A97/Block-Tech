@@ -9,24 +9,17 @@
   <%- include('../partials/header'); %>
 </header>
 
-<main>
-  <div>
-    <h2>All Maps</h2>
-    <p>You can from all maps here</p>
-
-
-    <p><%= tagline %></p>
-
-    <ul>
-        <% games.forEach(function(game) { %>
-          <li>
-            <strong><%= game.name %></strong>
-           <img src="<%= game.img %>" alt="">,
-          </li>
-        <% }); %>
-      </ul>
-
-  </div>
+<main class='all'>
+  <h2>All Maps</h2>
+  <p><%= tagline %></p>
+  <ul>  
+    <% games.forEach(function(game) { %>
+      <li>
+        <img src="<%= game.img %>" alt="">
+        <strong><%= game.name %></strong>
+      </li>
+    <% }); %>
+  </ul>
 </main>
 
 <footer>

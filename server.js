@@ -18,9 +18,9 @@ app.get('/', function (req, res) {
 app.get('/all', function (req, res) {
   res.render('pages/all')
   let games = [
-    { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
+    { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'Sci-fi', img: '/images/sci-fi.jpeg' }
   ]
-  var tagline = 'The Amazing Spiderman'
+  var tagline = 'Choose from all maps here'
 
   res.render('pages/all', {
     games: games,

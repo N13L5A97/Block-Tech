@@ -21,6 +21,9 @@ body{
     color: var(--color-text);
     position: relative;
 }
+h2{
+    margin: 0;
+}
 
 
 footer{
@@ -77,15 +80,6 @@ section{
     border-radius: 2em;
 }
 
-form{
-    margin-bottom: 1em;
-}
-
-img{
-    width: 30%;
-    aspect-ratio: 1/1;
-}
-
 .slider {
     appearance: none;
     width: 80%; /* width */
@@ -106,3 +100,36 @@ img{
     border-radius: 50%;
   }
 
+/* all maps */
+
+img{
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+.all{
+    background-color: white;
+    color: black;
+}
+
+.all ul{
+    gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    height: 10em;
+}
+
+.all li{
+    gap: 2px;
+    padding: 1em;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--nav-color);
+    height: 8em;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+}
