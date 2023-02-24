@@ -1,108 +1,135 @@
 @font-face {
-        font-family: 'league_spartanbold';
-        src: url('./fonts/leaguespartan-bold-webfont.woff2') format('woff2'),
-             url('./fonts/leaguespartan-bold-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
+  font-family: "league_spartanbold";
+  src: url("./fonts/leaguespartan-bold-webfont.woff2") format("woff2"),
+    url("./fonts/leaguespartan-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-:root{
-    --background-color: white;
-    --color-text: white;
-    --nav-color: #595cff;
-    --font: league_spartanbold, sans-serif;
+:root {
+  --background-color: white;
+  --color-text: white;
+  --nav-color: #595cff;
+  --font: league_spartanbold, sans-serif;
 }
 
-body{
-    margin: 0;
-    background-color: var(--background-color);
-    list-style: none;
-    font-family: var(--font);
-    color: var(--color-text);
-    position: relative;
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  list-style: none;
+  font-family: var(--font);
+  color: var(--color-text);
+  position: relative;
 }
 
-
-footer{
-    position: absolute;
-    bottom: 0;
+h2 {
+  margin-top: 0;
 }
 
-a{
-    text-decoration: none;
-    color: var(--text-color);
+footer {
+  position: absolute;
+  bottom: 0;
 }
 
-ul{
-    list-style: none;
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
-header{
-    position: fixed;
-    width: 100%;
-    position: relative;
-    background-color: var(--nav-color);
-    height: 6em;
+ul {
+  list-style: none;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    gap: 3em;
+header {
+  position: fixed;
+  width: 100%;
+  position: relative;
+  background-color: var(--nav-color);
+  height: 6em;
 }
 
-nav ul{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  gap: 3em;
 }
 
-
-nav ul li a:hover{
-    font-weight: 700;
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 
-main{
-    padding: 2em;
+nav ul li a:hover {
+  font-weight: 700;
 }
 
-section{
-    background-color: var(--nav-color);
-    margin: auto;
-    width: 50%;
-    padding: 2em;
-    border-radius: 2em;
+main {
+  padding: 2em;
 }
 
-form{
-    margin-bottom: 1em;
-}
-
-img{
-    width: 30%;
-    aspect-ratio: 1/1;
+section {
+  background-color: var(--nav-color);
+  margin: auto;
+  width: 30em;
+  aspect-ratio: 1/1;
+  padding: 2em;
+  border-radius: 2em;
 }
 
 .slider {
-    appearance: none;
-    width: 80%; /* width */
-    height: 1em; /* Specified height */
-    background: var(--background-color); /* white background */
-    outline: none; /* Remove outline */
-    transition: opacity .2s;
-    margin: 1em 0;
-    border-radius: 5em;
-  }
+  appearance: none;
+  width: 80%; /* width */
+  height: 1em; /* Specified height */
+  background: var(--background-color); /* white background */
+  outline: none; /* Remove outline */
+  transition: opacity 0.2s;
+  margin: 1em 0;
+  border-radius: 5em;
+}
 
 .slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #000000; /* black background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%;
-  }
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #000000; /* black background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
 
+/* all maps */
+
+img {
+  width: 80%;
+  aspect-ratio: 1/1;
+}
+
+.all {
+  background-color: white;
+  color: black;
+}
+
+.all ul {
+  gap: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  height: 10em;
+}
+
+.all li {
+  gap: 2px;
+  padding: 1em;
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--nav-color);
+  height: 8em;
+  aspect-ratio: 1/1;
+  border-radius: 1em;
+}
