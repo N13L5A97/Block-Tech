@@ -17,6 +17,7 @@ app.get('/', function (req, res) {
 // All Maps page
 app.get('/all', function (req, res) {
   res.render('pages/all')
+  
   const games = [
     { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
   ]
