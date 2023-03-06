@@ -7,7 +7,18 @@ app.set('view engine', 'ejs')
 app.set('views', 'views')
 app.use(express.static('static'))
 
-// use res.render to load up an ejs view file
+// hiermee kan je het formulier versturen
+app.use(express.urlencoded({ extended: true }))
+
+// datavase gedeelte
+require('dotenv').config()
+const { MongoClient } = require('mongodb')
+
+const uri = process.env.MONGODB_URI
+const client = new MongoClient(uri)
+const db = client.db('mapsplore')
+const coll = db.collection('maps')
+const cursor = coll.find()
 
 // index page
 app.get('/', function (req, res) {
@@ -15,17 +26,24 @@ app.get('/', function (req, res) {
 })
 
 // All Maps page
+const games = [
+  { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
+]
+
 app.get('/all', function (req, res) {
-  res.render('pages/all')
-
-  const games = [
-    { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
-  ]
-  const tagline = 'The Amazing Spiderman'
-
   res.render('pages/all', {
-    games: games,
-    tagline: tagline
+    games: games
+  })
+})
+
+// hier moeten gegevens uit de database komen
+const world = {
+}
+
+app.post('/results', function (req, res) {
+  console.log(req.body)
+  res.render('pages/results', {
+  world: world
   })
 })
 
@@ -39,3 +57,33 @@ console.log('Server is listening on port 8080')
 //   .catch(function (err) {
 //     console.log('Error!', err)
 //   })
+
+// // datavase gedeelte
+// require('dotenv').config()
+// const { MongoClient } = require('mongodb')
+
+// // Replace the uri string with your MongoDB deployment's connection string.
+// const uri = process.env.MONGODB_URI
+// const client = new MongoClient(uri)
+// const db = client.db('mapsplore')
+// const coll = db.collection('maps')
+// const cursor = coll.find()
+
+// data opvragen uit mapsplore database
+// async function maps () {
+//   try {
+//     await client.connect()
+//     console.log('Connected correctly to server')
+
+//     const db = client.db('mapsplore')
+//     const coll = db.collection('maps')
+//     const cursor = coll.find()
+
+//     await cursor.forEach(console.log)
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close()
+//   }
+// }
+
+// maps().catch(console.dir)

@@ -134,3 +134,7 @@ img {
   aspect-ratio: 1/1;
   border-radius: 1em;
 }
+
+.results img{
+  margin: auto;
+}

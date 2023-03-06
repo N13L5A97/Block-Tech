@@ -9,16 +9,16 @@
     <main>
       <section>
         <h2>Your World</h2>
-        <h3>Year:</h3>
-        <form id="time">
+        <form method="post" action="results">
+          <h3>Year:</h3>
           <input type="radio" name="year" value="past" />
-          <label for="past"> Past</label>
+          <label for="past"> Past </label>
 
           <input type="radio" name="year" value="present" />
-          <label for="present"> Present</label>
+          <label for="present"> Present </label>
 
           <input type="radio" name="year" value="future" />
-          <label for="future"> future </label>
+          <label for="future"> Future </label>
 
           <h3>Season:</h3>
           <input type="radio" name="season" value="winter" />
@@ -32,10 +32,8 @@
 
           <input type="radio" name="season" value="fall" />
           <label for="fall"> Fall </label>
-        </form>
 
-        <h3>Envoirement:</h3>
-        <form id="envoirement">
+          <h3>Envoirement</h3>
           <input type="radio" name="envoirement" value="sea"/>
           <label for="sea"> Sea </label>
 
@@ -45,16 +43,28 @@
           <input type="radio" name="envoirement" value="desert"/>
           <label for="desert"> Desert </label>
 
-          <input type="radio" name="envoirement" value="sky"/>
-          <label for="sky"> Sky </label>
+          <input type="radio" name="envoirement" value="mountains"/>
+          <label for="mountains"> Mountains </label>
 
           <input type="radio" name="envoirement" value="underground"/>
           <label for="underground"> Underground </label>
-        </form>
 
-        <button>Previous</button>
-        <button>Random</button>
-        <button>Next</button>
+          <input type="radio" name="envoirement" value="flat"/>
+          <label for="underground"> Flat </label>
+
+          <h3>Size</h3>
+          <input type="radio" name="size" value="small">
+          <label for="small"> Small </label>
+
+          <input type="radio" name="size" value="medium">
+          <label for="medium"> Medium </label>
+
+          <input type="radio" name="size" value="big">
+          <label for="big"> Big </label>
+
+
+          <button type="submit"> generate</button>
+        </form>
       </section>
     </main>
 
