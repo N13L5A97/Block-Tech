@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 // All Maps page
 app.get('/all', function (req, res) {
   res.render('pages/all')
-  
+
   const games = [
     { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
   ]
@@ -33,9 +33,9 @@ app.listen(port)
 console.log('Server is listening on port 8080')
 
 // test fetch api
-fetch('https://emojihub.yurace.pro/api/all')
-  .then(response => response.json())
-  .then(data => data.forEach(emoji => console.log(emoji.name)))
-  .catch(function (err) {
-    console.log('Error!', err)
-  })
+// fetch('https://emojihub.yurace.pro/api/all')
+//   .then(response => response.json())
+//   .then(data => data.forEach(emoji => console.log(emoji.name)))
+//   .catch(function (err) {
+//     console.log('Error!', err)
+//   })
