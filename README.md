@@ -7,8 +7,9 @@ This is a matching app for VR-Gamers who love to explore worlds. They can choose
 ## Feature 
 The Feature I am gonna be focussing on is the form where the gamers can input their preferences. 
 
+## Clone this Repo
 
+[uitleg over hoe clonen]
 
-## 
 
 
