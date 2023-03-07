@@ -1,6 +1,20 @@
+// require express
 const express = require('express')
 const app = express()
 const port = 8080
+
+// require dotenv
+require('dotenv').config()
+
+// datavase gedeelte
+// require mongodb
+const { MongoClient } = require('mongodb')
+
+const uri = process.env.MONGODB_URI
+const client = new MongoClient(uri)
+const db = client.db('mapsplore')
+const coll = db.collection('maps')
+const search = coll.find()
 
 // set the view engine to ejs
 app.set('view engine', 'ejs')
@@ -10,53 +24,117 @@ app.use(express.static('static'))
 // hiermee kan je het formulier versturen
 app.use(express.urlencoded({ extended: true }))
 
-// datavase gedeelte
-require('dotenv').config()
-const { MongoClient } = require('mongodb')
-
-const uri = process.env.MONGODB_URI
-const client = new MongoClient(uri)
-const db = client.db('mapsplore')
-const coll = db.collection('maps')
-const cursor = coll.find()
-
 // index page
 app.get('/', function (req, res) {
   res.render('pages/index')
 })
 
 // All Maps page
-const games = [
-  { name: 'Spider-man', img: '/images/spiderman.png' }, { name: 'sci-fi', img: '/images/sci-fi.jpeg' }
+const maps = [{
+  name: 'waterVillage',
+  url: '../images/waterVillage.png',
+  year: 'future',
+  season: 'summer',
+  envoirement: 'sea',
+  size: 'small'
+},
+{
+  name: 'clayVillage',
+  url: '../images/clayVillage.png',
+  year: 'present',
+  season: 'summer',
+  envoirement: 'flat',
+  size: 'medium'
+},
+{
+  name: 'undergroundBase',
+  url: '../images/undergroundBase.png',
+  year: 'future',
+  season: 'fall',
+  envoirement: 'underground',
+  size: 'medium'
+},
+{
+  name: 'sandStorm',
+  url: '../images/sandStorm.png',
+  year: 'future',
+  season: 'fall',
+  envoirement: 'desert',
+  size: 'big'
+},
+{
+  name: 'rainForest',
+  url: '../images/rainForest.png',
+  year: 'past',
+  season: 'summer',
+  envoirement: 'forest',
+  size: 'medium'
+},
+{
+  name: 'desertVillage',
+  url: '../images/desertVillage.png',
+  year: 'past',
+  season: 'summer',
+  envoirement: 'desert',
+  size: 'small'
+},
+{
+  name: 'futureScape',
+  url: '../images/futureScape.png',
+  year: 'future',
+  season: 'spring',
+  envoirement: 'desert',
+  size: 'big'
+},
+{
+  name: 'snowLabs',
+  url: '../images/snowLabs.png',
+  year: 'future',
+  season: 'winter',
+  envoirement: 'mountains',
+  size: 'big'
+}
+
 ]
 
 app.get('/all', function (req, res) {
   res.render('pages/all', {
-    games: games
+    maps: maps
   })
 })
 
 // hier moeten gegevens uit de database komen
-const world = {
-}
 
 app.post('/results', function (req, res) {
   console.log(req.body)
-  res.render('pages/results', {
-  world: world
-  })
+
+  // db.maps.aggregate([{ $match: { year: req.year, season: req.season } } ])
+  // [ { $match : { author: "dave" }}]
+  // res.render('pages/results', {
+  //   maps: maps
+  // })
 })
+
+// functie die zoekt naar alle werelden in de database
+async function showAllMaps () {
+  try {
+    await client.connect()
+    console.log('Connected correctly to server')
+
+    // const check = db.maps.find([{ $expr: { year: 'future' } }])
+    // await search.forEach(check)
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close()
+  }
+}
+
+showAllMaps().catch(console.dir)
 
 app.listen(port)
 console.log('Server is listening on port 8080')
 
-// test fetch api
-// fetch('https://emojihub.yurace.pro/api/all')
-//   .then(response => response.json())
-//   .then(data => data.forEach(emoji => console.log(emoji.name)))
-//   .catch(function (err) {
-//     console.log('Error!', err)
-//   })
+// als je dit niet gebruitk kan het weg
 
 // // datavase gedeelte
 // require('dotenv').config()

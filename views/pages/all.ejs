@@ -13,10 +13,10 @@
   <h2>All Maps</h2>
 
   <ul>  
-    <% games.forEach(function(game) { %>
+    <% maps.forEach(function(maps) { %>
       <li>
-        <img src="<%= game.img %>" alt="">
-        <strong><%= game.name %></strong>
+        <h3> <%= maps.name %> </h3>
+        <img src="<%= maps.url %>" alt="">
       </li>
     <% }); %>
   </ul>

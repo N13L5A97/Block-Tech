@@ -12,8 +12,10 @@
 <main class='results'>
   <h2>Your Map</h2>
   <section>
-    <h3> <%= world.name %> </h3>
-    <img src="<%= world.img %>" alt="">
+    <% maps.forEach(function(maps) { %>
+        <h3> <%= maps.name %> </h3>
+        <img src="<%= maps.url %>" alt="">
+    <% }); %>
   </section>
 </main>
 
