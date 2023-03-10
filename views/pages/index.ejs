@@ -9,7 +9,7 @@
 
     <main>
       <div>
-        <p> <%= weather.temp_c %> </p>
+        <p id="temp"> <%= weather.temp_c %> </p>
         <img src="<%= weather.condition.icon %>" alt="">
       </div>
       <section>
@@ -69,11 +69,11 @@
 
 
           <button type="submit"> generate </button>
-          <button id="RandomButton">Randomize</button>
         </form>
       </section>
     </main>
 
     <footer><%- include('../partials/footer'); %></footer>
+    <script src="../../scripts/script.js"></script>
   </body>
 </html>

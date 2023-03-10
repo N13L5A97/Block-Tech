@@ -11,8 +11,18 @@
         <p> <%= weather.temp_c %> </p>
         <img src="<%= weather.condition.icon %>" alt="">
       </div>
-      <h2>Suggestions</h2>
-      <form action=""></form>
+      <section>
+        <h2>Send us your world suggestions!</h2>
+        <form method="post" action="">
+          <h3>Your Name:</h3>
+          <input type="text" name="username"/>
+          <h3>E-mail:</h3>
+          <input type="email" name="email"/>
+          <h3>Your Idea:</h3>
+          <textarea name="idea" rows="10" cols="30"></textarea>
+          <button type="submit">submit</button>
+        </form>
+      </section>
     </main>
 
     <footer><%- include('../partials/footer'); %></footer>

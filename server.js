@@ -56,6 +56,33 @@ app.get('/all', async (req, res) => {
   }
 })
 
+// suggestions page
+app.get('/suggestions', async function (req, res) {
+  try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+    res.render('pages/suggestions', { weather })
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving maps from database')
+  }
+})
+
+// function to check the input and store it in an array
+app.post('/suggestions', async (req, res) => {
+  // usercol.insertOne(req.body)
+  try {
+    console.log(req.body)
+    const usercol = db.collection('suggestions')
+    await usercol.insertOne(req.body)
+    res.redirect('/')
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving maps from database')
+  }
+})
+
 // result page
 app.post('/results', async (req, res) => {
   const { year, season, envoirement, size } = req.body
@@ -83,29 +110,16 @@ app.post('/results', async (req, res) => {
   }
 })
 
-// suggestions page
-app.get('/suggestions', async function (req, res) {
-  try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
-    const weatherData = await response.json()
-    const weather = weatherData.current
-    res.render('pages/suggestions', { weather })
-  } catch (err) {
-    console.error(err)
-    res.status(500).send('Error retrieving maps from database')
-  }
-})
+// async function goOutside () {
+//   const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+//   const weatherData = await response.json()
+//   const weather = weatherData.current
+//   if (weather.temp_c > 0) {
+//     console.log('Het is lekker weer om buiten te gaan!')
+//   }
+// }
 
-async function goOutside () {
-  const response = fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
-  const weatherData = response.json()
-  const weather = weatherData.current
-  if (weather.temp_c > 1) {
-    console.log('Het is lekker weer om buiten te gaan!')
-  }
-}
-
-goOutside()
+// goOutside()
 
 // 404 error page
 app.use(function (req, res, next) {
