@@ -11,6 +11,10 @@
 
 <main class='results'>
   <h2>Your Map</h2>
+  <div>
+    <p> <%= weather.temp_c %> </p>
+    <img src="<%= weather.condition.icon %>" alt="">
+  </div>
   <section>
     <% maps.forEach(function(maps) { %>
         <h3> <%= maps.name %> </h3>

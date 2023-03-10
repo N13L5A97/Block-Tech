@@ -172,3 +172,28 @@ img {
   top: 0;
   right: 0;
 }
+
+div{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: 6em;
+  color: white;
+}
+
+div img{
+  width: 3em;
+  aspect-ratio: 1/1;
+}
+
+div p{
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+div p::after{
+  content: "°C";
+}

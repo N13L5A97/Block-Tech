@@ -4,9 +4,14 @@
     <%- include('../partials/head'); %>
   </head>
   <body>
-    <header><%- include('../partials/header'); %></header>
+    <header><%- include('../partials/header'); %>
+    </header>
 
     <main>
+      <div>
+        <p> <%= weather.temp_c %> </p>
+        <img src="<%= weather.condition.icon %>" alt="">
+      </div>
       <section>
         <h2>Your World</h2>
         <form method="post" action="results">
@@ -63,7 +68,8 @@
           <label for="big"> Big </label>
 
 
-          <button type="submit"> generate</button>
+          <button type="submit"> generate </button>
+          <button id="RandomButton">Randomize</button>
         </form>
       </section>
     </main>

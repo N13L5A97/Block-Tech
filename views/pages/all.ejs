@@ -10,8 +10,12 @@
 </header>
 
 <main class='all'>
-  <h2>All Maps</h2>
+  <div>
+    <p> <%= weather.temp_c %> </p>
+    <img src="<%= weather.condition.icon %>" alt="">
+  </div>
 
+  <h2>All Maps</h2>
   <ul>  
     <% maps.forEach(function(maps) { %>
       <li>
@@ -25,6 +29,5 @@
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
-
 </body>
 </html>

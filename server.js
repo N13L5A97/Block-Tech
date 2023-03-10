@@ -1,3 +1,4 @@
+/* eslint-disable space-before-blocks */
 const express = require('express')
 const app = express()
 const port = 8080
@@ -29,15 +30,26 @@ client.connect(err => {
 })
 
 // home page
-app.get('/', function (req, res) {
-  res.render('pages/index')
+app.get('/', async function (req, res) {
+  try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+    res.render('pages/index', { weather })
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving weather from database')
+  }
 })
 
 // all maps page
 app.get('/all', async (req, res) => {
   try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
     const maps = await coll.find().toArray()
-    res.render('pages/all', { maps })
+    res.render('pages/all', { maps, weather })
   } catch (err) {
     console.error(err)
     res.status(500).send('Error retrieving maps from database')
@@ -56,16 +68,44 @@ app.post('/results', async (req, res) => {
       size
     }).toArray()
 
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+
     if (maps.length === 0) {
       res.render('pages/404')
     } else {
-      res.render('pages/results', { maps })
+      res.render('pages/results', { maps, weather })
     }
   } catch (err) {
     console.error(err)
     res.status(500).send('Error retrieving maps from database')
   }
 })
+
+// suggestions page
+app.get('/suggestions', async function (req, res) {
+  try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+    res.render('pages/suggestions', { weather })
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving maps from database')
+  }
+})
+
+async function goOutside () {
+  const response = fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+  const weatherData = response.json()
+  const weather = weatherData.current
+  if (weather.temp_c > 1) {
+    console.log('Het is lekker weer om buiten te gaan!')
+  }
+}
+
+goOutside()
 
 // 404 error page
 app.use(function (req, res, next) {
