@@ -1,41 +1,51 @@
 @font-face {
   font-family: "league_spartanbold";
   src: url("./fonts/leaguespartan-bold-webfont.woff2") format("woff2"),
-    url("./fonts/leaguespartan-bold-webfont.woff") format("woff");
+       url("./fonts/leaguespartan-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  --background-color: white;
-  --color-text: white;
+  --color-text1: white;
+  --color-text2: black;
+
+  --background-color1: white;
+  --background-color2: black;
   --nav-color: #595cff;
+
   --font: league_spartanbold, sans-serif;
 }
 
+/* refactor rules: 
+- comments in English 
+- selectors: font, root, body, headings, link decoration, list decoration, header, nav, main, footer, page styling in page order
+- use variables for colors
+- use variables for fonts
+- use variables for font sizes
+- styling order: position, display, width/height, margin, padding, colors, fonts, borders, etc.
+*/
+
 body {
-  margin: 0;
-  background-color: var(--background-color);
-  list-style: none;
-  font-family: var(--font);
-  color: var(--color-text);
   position: relative;
+
+  margin: 0;
+
+  color: var(--color-text1);
+  background-color: var(--background-color1);
+
+  font-family: var(--font);
+
+  list-style: none;
 }
 
 h2 {
   margin-top: 0;
 }
 
-footer {
-  color: black;
-  position: fixed;
-  bottom: 0;
-  left: 1em;
-}
-
 a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color1);
 }
 
 ul {
@@ -56,6 +66,8 @@ nav {
   padding: 1em;
   gap: 3em;
 }
+
+
 
 nav ul {
   margin: 0;
@@ -82,11 +94,21 @@ section {
   border-radius: 2em;
 }
 
+
+footer {
+  color: var(--color-text2);
+  position: fixed;
+  bottom: 0;
+  left: 1em;
+}
+
+
+/* page name */
 .slider {
   appearance: none;
   width: 80%; /* width */
   height: 1em; /* Specified height */
-  background: var(--background-color); /* white background */
+  background: var(--background-color1); /* white background */
   outline: none; /* Remove outline */
   transition: opacity 0.2s;
   margin: 1em 0;
@@ -97,7 +119,7 @@ section {
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #000000; /* black background */
+  background: var(--background-color2); /* black background */
   cursor: pointer; /* Cursor on hover */
   border-radius: 50%;
 }
@@ -111,8 +133,8 @@ img {
 }
 
 .all {
-  background-color: white;
-  color: black;
+  background-color: var(--background-color1);
+  color: var(--color-text2);
 }
 
 .all ul {
@@ -126,7 +148,7 @@ img {
 .all li {
   gap: 2px;
   padding: 1em;
-  color: var(--color-text);
+  color: var(--color-text1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,5 +164,11 @@ img {
 }
 
 .error{
-  color: black;
+  color: var(--color-text2);
+}
+
+#randomButton{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
