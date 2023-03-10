@@ -140,3 +140,7 @@ img {
 .results img{
   margin: auto;
 }
+
+.error{
+  color: black;
+}
