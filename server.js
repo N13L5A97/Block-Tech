@@ -119,19 +119,6 @@ app.get('/thanks', async function (req, res) {
   }
 })
 
-// header partial
-app.post('../partials/header', async function (req, res) {
-  try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
-    const weatherData = await response.json()
-    const weather = weatherData.current
-    res.render('partials/header', { weather })
-  } catch (err) {
-    console.error(err)
-    res.status(500).send('Error retrieving weather')
-  }
-})
-
 // 404 error page
 app.use(function (req, res, next) {
   res.status(404).render('pages/404')

@@ -8,6 +8,10 @@
     </header>
 
     <main>
+      <div>
+        <p id="temp"> <%= weather.temp_c %> </p>
+        <img src="<%= weather.condition.icon %>" alt="">
+      </div>
       <section>
         <h2>Your World</h2>
         <form method="post" action="results">

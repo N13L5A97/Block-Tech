@@ -9,8 +9,12 @@
   </header>
 
   <main class="error">
-      <h1>Thank You For Your Suggestion</h1>
-      <a href="/"><h2>Go back to home</h2></a>
+    <div>
+      <p id="temp"> <%= weather.temp_c %> </p>
+      <img src="<%= weather.condition.icon %>" alt="">
+    </div>
+    <h1>Thank You For Your Suggestion</h1>
+    <a href="/"><h2>Go back to home</h2></a>
   </main>
 
   <footer>

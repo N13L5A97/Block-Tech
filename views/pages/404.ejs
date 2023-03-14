@@ -10,8 +10,12 @@
 </header>
 
 <main class="error">
-    <h1>Error 404</h1>
-    <h2>Page not found</h2>
+  <div>
+    <p id="temp"> <%= weather.temp_c %> </p>
+    <img src="<%= weather.condition.icon %>" alt="">
+  </div>
+  <h1>Error 404</h1>
+  <h2>Page not found</h2>
 </main>
 
 <footer>

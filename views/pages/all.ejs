@@ -9,15 +9,19 @@
   </header>
 
   <main class='all'>
-  <h2>All Maps</h2>
-  <ul>  
-    <% maps.forEach(function(maps) { %>
-      <li>
-        <h3> <%= maps.name %> </h3>
-        <img src="<%= maps.url %>" alt="">
-      </li>
-    <% }); %>
-  </ul>
+    <div>
+      <p id="temp"> <%= weather.temp_c %> </p>
+      <img src="<%= weather.condition.icon %>" alt="">
+    </div>
+    <h2>All Maps</h2>
+    <ul>  
+      <% maps.forEach(function(maps) { %>
+        <li>
+          <h3> <%= maps.name %> </h3>
+          <img src="<%= maps.url %>" alt="">
+        </li>
+      <% }); %>
+    </ul>
   </main>
 
   <footer>

@@ -7,6 +7,10 @@
     <header><%- include('../partials/header'); %></header>
 
     <main>
+      <div>
+        <p id="temp"> <%= weather.temp_c %> </p>
+        <img src="<%= weather.condition.icon %>" alt="">
+      </div>
       <section>
         <h2>Send us your world suggestions!</h2>
         <form id="suggestions" method="post" action="">
@@ -23,7 +27,6 @@
         </form>
       </section>
     </main>
-
     <footer><%- include('../partials/footer'); %></footer>
     <script src="../../scripts/script.js"></script>
   </body>
