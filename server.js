@@ -76,6 +76,7 @@ app.get('/suggestions', async function (req, res) {
 })
 
 // function to check the input and store it in an array
+// this part needs xss protection
 app.post('/suggestions', async (req, res) => {
   try {
     console.log(req.body)
@@ -88,6 +89,7 @@ app.post('/suggestions', async (req, res) => {
 })
 
 // result page
+// this part needs xss protection
 app.post('/results', async (req, res) => {
   const { year, season, envoirement, size } = req.body
   try {
