@@ -20,4 +20,10 @@ If you want to clone this repo locally you can do this the following way:
 </pre>
 
 
-
+## Run the code 
+To run the code type this in your terminal:
+<pre>
+<code>npm start</code>
+</pre>
+ 
+Then open the browser and go to: http://localhost:8080/

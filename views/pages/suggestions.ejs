@@ -11,13 +11,13 @@
         <h2>Send us your world suggestions!</h2>
         <form id="suggestions" method="post" action="">
           <label for="username"> Name: </label>
-          <input required id="username" type="text" name="username"/>
+          <input required id="username" type="text" name="username" placeholder="your name">
 
           <label for="email"> Email: </label>
-          <input required id="email" type="email" name="email"/>
+          <input required id="email" type="email" name="email" placeholder="youremail@adres.com"/>
 
           <label for="idea"> Your Suggestion: </label>
-          <textarea required id="idea" name="idea" rows="10" cols="30"></textarea>
+          <textarea required id="idea" name="idea" rows="10" cols="30" placeholder="your idea here"></textarea>
 
           <input type="submit" value="Submit">
         </form>
@@ -25,5 +25,6 @@
     </main>
 
     <footer><%- include('../partials/footer'); %></footer>
+    <script src="../../scripts/script.js"></script>
   </body>
 </html>

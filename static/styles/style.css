@@ -5,8 +5,11 @@
   --background-color1: white;
   --background-color2: black;
   --nav-color: #595cff;
-
-  --font: league_spartanbold, sans-serif;
+  --radio-color: #ff3b3b;
+  --valid-color: #00ff00;
+  
+  --font: "new-hero", sans-serif;
+  --bold: 700;
 }
 
 /* refactor rules: 
@@ -197,6 +200,43 @@ div p::after{
 }
 
 input[type="submit"]{
-  margin-top: 1em;
+  margin-top: 3em;
   width: 10em;
+
+  background-color: var(--radio-color);
+  border: none;
+  padding: 1em;
+  border-radius: 5em;
+  color: var(--color-text1);
+  font-weight: var(--bold);
+  font-family: var(--font);
+}
+
+/* remove webkit apearance: https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+
+  /* Custom styles */
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--radio-color);
+  border: solid 5px white;
+}
+
+input[type="text"]:invalid, input[type="email"]:invalid, textarea:invalid {
+  border: var(--radio-color) solid 2px;
+}
+
+input[type="text"]:valid, input[type="email"]:valid, textarea:valid {
+  border: var(--valid-color) solid 2px;
 }

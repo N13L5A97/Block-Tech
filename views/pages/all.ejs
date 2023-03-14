@@ -4,12 +4,11 @@
   <%- include('../partials/head'); %>
 </head>
 <body>
-
-<header>
+  <header>
   <%- include('../partials/header'); %>
-</header>
+  </header>
 
-<main class='all'>
+  <main class='all'>
   <h2>All Maps</h2>
   <ul>  
     <% maps.forEach(function(maps) { %>
@@ -19,10 +18,11 @@
       </li>
     <% }); %>
   </ul>
-</main>
+  </main>
 
-<footer>
+  <footer>
   <%- include('../partials/footer'); %>
-</footer>
+  </footer>
+  <script src="../../scripts/script.js"></script>
 </body>
 </html>
