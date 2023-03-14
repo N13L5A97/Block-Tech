@@ -53,11 +53,10 @@ ul {
 
 header {
   position: fixed;
-  top: 0;
   width: 100%;
+  position: relative;
   background-color: var(--nav-color);
   height: 6em;
-  box-shadow: var(--nav-color) 2px 2px 38px;
 }
 
 nav {
@@ -82,9 +81,7 @@ nav ul li a:hover {
 }
 
 main {
-  margin-top: 8em;
   padding: 2em;
-  height: 100vh;
 }
 
 section {
@@ -99,12 +96,7 @@ section {
 
 footer {
   color: var(--color-text2);
-  padding-left: 2em;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--background-color1);
-  box-shadow: var(--nav-color) -2px -2px 38px;
+  margin-left: 2em;
 }
 
 
@@ -180,7 +172,7 @@ li img {
 }
 
 div{
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 1em;
   display: flex;
