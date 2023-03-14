@@ -28,6 +28,9 @@ const coll = db.collection('maps')
 // var voor de user collectie
 const usercol = db.collection('suggestions')
 
+// API key
+const apiKey = process.env.API_KEY
+
 client.connect(err => {
   if (err) { throw err }
 })
@@ -35,7 +38,7 @@ client.connect(err => {
 // home page
 app.get('/', async function (req, res) {
   try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const response = await fetch(apiKey)
     const weatherData = await response.json()
     const weather = weatherData.current
     res.render('pages/index', { weather })
@@ -48,7 +51,7 @@ app.get('/', async function (req, res) {
 // all maps page
 app.get('/all', async (req, res) => {
   try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const response = await fetch(apiKey)
     const weatherData = await response.json()
     const weather = weatherData.current
     const maps = await coll.find().toArray()
@@ -62,7 +65,7 @@ app.get('/all', async (req, res) => {
 // suggestions page
 app.get('/suggestions', async function (req, res) {
   try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const response = await fetch(apiKey)
     const weatherData = await response.json()
     const weather = weatherData.current
     res.render('pages/suggestions', { weather })
@@ -95,7 +98,7 @@ app.post('/results', async (req, res) => {
       size
     }).toArray()
 
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const response = await fetch(apiKey)
     const weatherData = await response.json()
     const weather = weatherData.current
 
@@ -109,7 +112,7 @@ app.post('/results', async (req, res) => {
 // thanks page
 app.get('/thanks', async function (req, res) {
   try {
-    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const response = await fetch(apiKey)
     const weatherData = await response.json()
     const weather = weatherData.current
     res.render('pages/thanks', { weather })
