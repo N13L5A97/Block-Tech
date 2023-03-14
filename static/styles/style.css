@@ -133,8 +133,9 @@ img {
 }
 
 .all ul {
-  gap: 2em;
   display: flex;
+  gap: 2em;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 0;
   height: 10em;
@@ -171,7 +172,7 @@ img {
 div{
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1em;
   display: flex;
   align-items: center;
   gap: 0.5em;
