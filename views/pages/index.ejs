@@ -8,10 +8,6 @@
     </header>
 
     <main>
-      <div>
-        <p id="temp"> <%= weather.temp_c %> </p>
-        <img src="<%= weather.condition.icon %>" alt="">
-      </div>
       <section>
         <h2>Your World</h2>
         <form method="post" action="results">
@@ -65,10 +61,9 @@
           <label for="medium"> Medium </label>
 
           <input type="radio" name="size" value="big">
-          <label for="big"> Big </label>
+          <label for="big"> Big </label> 
 
-
-          <button type="submit"> generate </button>
+          <br> <input id="generate" type="submit" value="Generate">
         </form>
       </section>
     </main>

@@ -1,15 +1,23 @@
 # Mapsplore
-A matching-app for VR-Gamers
+A matching-app for adventurous gamers
 
 ## Project Description
-This is a matching app for VR-Gamers who love to explore worlds. They can choose different characteristics they want their world to have and then get a couple suggestions. They can choose what time the world should be in (e.g. the year 1000 b.c. or the year 3500), but also the time of the day (do they want it to be real time or always night). They can also choose landscape. Think about mountains, buildings, maybe caves or oceans. And last but not least, the seasons. With every preference the system will create a new world you can explore and when you like it you can add it to your favorites. 
+This is a matching app for gamers who love to explore worlds. They can choose different characteristics they want their world to have and then get a couple suggestions. They can choose what time the world should be in (past, present or future), the season (winter, spring, summer or fall), the envoirement( e.g. sky, sea, forest, etc.) and also the size of the map. With every preference the system will check the database for matches and the best match will come forward. 
 
 ## Feature 
-The Feature I am gonna be focussing on is the form where the gamers can input their preferences. 
+I'm not going to be focussing on the worlds that much because I'm not a game developer, but instead my focus is gonna be on the the form where the gamers can input their preferences. How can I match their input with the data from the data base. 
 
 ## Clone this Repo
+If you want to clone this repo locally you can do this the following way:
 
-[uitleg over hoe clonen]
+- Go to my repo: https://github.com/N13L5A97/Block-Tech
+- Copy the url in of my repo
+
+- Go to your terminal
+
+<pre>
+<code>$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</code>
+</pre>
 
 
 

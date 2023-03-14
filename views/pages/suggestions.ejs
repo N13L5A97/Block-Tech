@@ -7,20 +7,19 @@
     <header><%- include('../partials/header'); %></header>
 
     <main>
-      <div>
-        <p> <%= weather.temp_c %> </p>
-        <img src="<%= weather.condition.icon %>" alt="">
-      </div>
       <section>
         <h2>Send us your world suggestions!</h2>
-        <form method="post" action="">
-          <h3>Your Name:</h3>
-          <input type="text" name="username"/>
-          <h3>E-mail:</h3>
-          <input type="email" name="email"/>
-          <h3>Your Idea:</h3>
-          <textarea name="idea" rows="10" cols="30"></textarea>
-          <button type="submit">submit</button>
+        <form id="suggestions" method="post" action="">
+          <label for="username"> Name: </label>
+          <input required id="username" type="text" name="username"/>
+
+          <label for="email"> Email: </label>
+          <input required id="email" type="email" name="email"/>
+
+          <label for="idea"> Your Suggestion: </label>
+          <textarea required id="idea" name="idea" rows="10" cols="30"></textarea>
+
+          <input type="submit" value="Submit">
         </form>
       </section>
     </main>

@@ -25,6 +25,9 @@ const client = new MongoClient(uri)
 const db = client.db('mapsplore')
 const coll = db.collection('maps')
 
+// var voor de user collectie
+const usercol = db.collection('suggestions')
+
 client.connect(err => {
   if (err) { throw err }
 })
@@ -71,22 +74,19 @@ app.get('/suggestions', async function (req, res) {
 
 // function to check the input and store it in an array
 app.post('/suggestions', async (req, res) => {
-  // usercol.insertOne(req.body)
   try {
     console.log(req.body)
-    const usercol = db.collection('suggestions')
     await usercol.insertOne(req.body)
-    res.redirect('/')
+    res.redirect('/thanks')
   } catch (err) {
     console.error(err)
-    res.status(500).send('Error retrieving maps from database')
+    res.status(500).send('Error sending suggestion to database')
   }
 })
 
 // result page
 app.post('/results', async (req, res) => {
   const { year, season, envoirement, size } = req.body
-  // function to check the input and store it in an array
   try {
     const maps = await coll.find({
       year,
@@ -99,27 +99,38 @@ app.post('/results', async (req, res) => {
     const weatherData = await response.json()
     const weather = weatherData.current
 
-    if (maps.length === 0) {
-      res.render('pages/404')
-    } else {
-      res.render('pages/results', { maps, weather })
-    }
+    res.render('pages/results', { maps, weather })
   } catch (err) {
     console.error(err)
     res.status(500).send('Error retrieving maps from database')
   }
 })
 
-// async function goOutside () {
-//   const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
-//   const weatherData = await response.json()
-//   const weather = weatherData.current
-//   if (weather.temp_c > 0) {
-//     console.log('Het is lekker weer om buiten te gaan!')
-//   }
-// }
+// thanks page
+app.get('/thanks', async function (req, res) {
+  try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+    res.render('pages/thanks', { weather })
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving weather')
+  }
+})
 
-// goOutside()
+// header partial
+app.post('../partials/header', async function (req, res) {
+  try {
+    const response = await fetch('http://api.weatherapi.com/v1/current.json?key=aaf14135468247f8ae8175055230803&q=Amsterdam')
+    const weatherData = await response.json()
+    const weather = weatherData.current
+    res.render('partials/header', { weather })
+  } catch (err) {
+    console.error(err)
+    res.status(500).send('Error retrieving weather')
+  }
+})
 
 // 404 error page
 app.use(function (req, res, next) {
@@ -128,9 +139,3 @@ app.use(function (req, res, next) {
 
 app.listen(port)
 console.log('Server is listening on port 8080')
-
-// gebruik crud 2x (create, read, update, delete)
-// find = read
-// insert = create
-// update = update
-// delete = delete
