@@ -39,8 +39,8 @@ h2 {
 }
 
 h3{
-  margin-top: 1.5em;
-  margin-bottom: .5em;
+  margin: 0 0 0.3em;
+  font-size: 2em;
 }
 
 a {
@@ -88,10 +88,13 @@ main {
 section {
   background-color: var(--nav-color);
   margin: auto;
-  width: 30em;
-  aspect-ratio: 1/1;
-  padding: 2em;
+  width: fit-content;
+  padding: 2em 3em;
   border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 
@@ -100,28 +103,11 @@ footer {
   margin-left: 2em;
 }
 
-
-/* page name */
-.slider {
-  appearance: none;
-  width: 80%; /* width */
-  height: 1em; /* Specified height */
-  background: var(--background-color1); /* white background */
-  outline: none; /* Remove outline */
-  transition: opacity 0.2s;
-  margin: 1em 0;
-  border-radius: 5em;
+/* home page */
+form h3{
+  font-size: 1.5em;
+  margin-top: 1em;
 }
-
-.slider::-webkit-slider-thumb {
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: var(--background-color2); /* black background */
-  cursor: pointer; /* Cursor on hover */
-  border-radius: 50%;
-}
-
 
 /* all maps */
 
@@ -135,10 +121,14 @@ li img {
   color: var(--color-text2);
 }
 
+.all h3{
+  font-size: 1.5em;
+}
+
 .all ul {
   display: flex;
   gap: 2em;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 0;
   height: 10em;
@@ -158,8 +148,9 @@ li img {
   border-radius: 1em;
 }
 
-.results img{
+.results section img{
   margin: auto;
+  max-width: 25em;
 }
 
 .error{
@@ -214,6 +205,13 @@ input[type="submit"]{
   color: var(--color-text1);
   font-weight: var(--bold);
   font-family: var(--font);
+}
+
+/* suggestions page */
+
+.suggestions{
+  align-items: flex-start;
+  display: block;
 }
 
 /* remove webkit apearance: https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
